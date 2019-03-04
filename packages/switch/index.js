@@ -1,4 +1,4 @@
-import CustomSwitch from './CustomSwitch'
+import CustomSwitch from './custom-switch'
 
 CustomSwitch.install = function(Vue) {
   Vue.component(CustomSwitch.name, CustomeSwitch);
