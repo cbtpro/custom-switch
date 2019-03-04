@@ -1,12 +1,17 @@
 var path = require('path')
 var webpack = require('webpack')
 
+const NODE_ENV = process.env.NODE_ENV
+
 module.exports = {
-  entry: './src/main.js',
+  entry: NODE_ENV == 'development' ? './src/main.js' : './packages/switch/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: 'custom-switch.js',
+    library: 'custom-switch',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [
